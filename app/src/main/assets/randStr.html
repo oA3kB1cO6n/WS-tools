@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>随机字符生成器</title>
+  <script src="./index.js" defer></script>
+  <style>
+    .add {
+      background-color: #90FF90;
+      border: 3px solid #50FF50;
+    }
+    .rem {
+      background-color: #FF9090;
+      border: 3px solid #FF5050;
+    }
+    .uni {
+      width: 60px;
+    }
+    @font-face {
+        font-family:"NotoColorEmoji-minus";
+        src:url(fonts/NotoColorEmoji-minus.ttf);
+    }
+    @font-face {
+        font-family:"Times";
+        src:url(fonts/TH-Times.ttf);
+    }
+    @font-face {
+        font-family:"Hancom";
+        src:url(fonts/Hancom.ttf);
+    }
+    @font-face {
+        font-family:"TH-P0";
+        src:url(fonts/TH-Disp-P0.ttf);
+    }
+    @font-face {
+        font-family:"TH-P2";
+        src:url(fonts/TH-Disp-P2.ttf);
+    }
+    @font-face {
+        font-family:"TH-P3";
+        src:url(fonts/TH-Disp-P3.ttf);
+    }
+    @font-face {
+        font-family:"MU-LT";
+        src:url(fonts/MonuLast-8.16-1.ttf);
+    }
+    textarea {
+      resize: none;
+      width: calc(100% - 50px);
+    }
+  </style>
+  <script src="./randStr.js" defer></script>
+</head>
+<body>
+  <h1>随机字符生成器</h1>
+  <button id="toggleTo1"></button><br>
+  <button id="toggleTo2"></button><br>
+  <button id="toggleTo3"></button><br>
+  <button id="toggleTo4"></button><br>
+  <label for="countInput">数量：</label>
+  <input type="number" id="countInput" value="100" oninput="updateSliderValue()">
+  <br>
+  <input type="range" id="countSlider" min="1" max="1000" value="100" oninput="updateInputValue()" style="width: 100%;">
+  <br>
+  <label>
+    <input type="checkbox" id="includeDigits"> 包含数字
+  </label>
+  <br>
+  <label>
+    <input type="checkbox" id="includeLowercase"> 包含小写字母
+  </label>
+  <br>
+  <label>
+    <input type="checkbox" id="includeUppercase"> 包含大写字母
+  </label>
+  <br>
+  <label>
+    <input type="checkbox" id="includeSpecialSymbols"> 包含特殊符号
+  </label>
+  <br>
+  <label>
+    <input type="checkbox" id="includeBasicChinese"> 包含基本区中文
+  </label>
+  <br>
+  <label>
+    <input type="checkbox" id="includeExtendedAChinese"> 包含扩展A区中文
+  </label>
+  <br>
+  <label>
+    <input type="checkbox" id="includeExtendedBChinese"> 包含扩展B区中文
+  </label>
+  <br>
+  <label>
+    <input type="checkbox" id="includeExtendedCChinese"> 包含扩展C区中文
+  </label>
+  <br>
+  <label>
+    <input type="checkbox" id="includeExtendedDChinese"> 包含扩展D区中文
+  </label>
+  <br>
+  <label>
+    <input type="checkbox" id="includeExtendedEChinese"> 包含扩展E区中文
+  </label>
+  <br>
+  <label>
+    <input type="checkbox" id="includeExtendedFChinese"> 包含扩展F区中文
+  </label>
+  <br>
+  <label>
+    <input type="checkbox" id="includeExtendedGChinese"> 包含扩展G区中文
+  </label>
+  <br>
+  <label>
+    <input type="checkbox" id="includeExtendedHChinese"> 包含扩展H区中文
+  </label>
+  <br>
+  <label>
+    	<input type="checkbox" id="includeExtendedIChinese"> 包含扩展I区中文
+  </label>
+  <br>
+  <label>
+    <input type="checkbox" id="includeCompatibleChinese"> 包含兼容区中文
+  </label>
+  <br>
+  <label>
+    <input type="checkbox" id="includeCompatibleSupplementChinese"> 包含兼容补充区中文
+  </label>
+  <br>
+  <label>
+    <input type="checkbox" id="includeCustomChar"> 包含自定义字符
+  </label>
+  <br>
+  <input type="text" id="customChar" placeholder="输入自定义字符">
+  <br>
+  <label>
+      <input type="checkbox" id="includeCustomInterval"> 包含自定义区间
+      <button onclick="add()" class="add">+</button>
+  </label>
+  <div id="con"></div>
+  <label>
+    <input type="checkbox" id="noRepeat">不重复
+  </label>
+  <br>
+  <button onclick="generateRandomCharacters()">生成随机字符</button>
+  <button onclick="navigator.clipboard.writeText(resultTextarea.value)">复制</button>
+  <br>
+  <label for="resultTextarea">生成结果：</label>
+  <br>
+  <textarea readonly rows="5" id="resultTextarea" style="font-family:NotoColorEmoji-minus,Times,Hancom,TH-P0,TH-P2,TH-P3,MU-LT;" oninput="updateCount()"></textarea>
+  <span id="counter" style="vertical-align: top;">0</span>
+</body>
+</html>

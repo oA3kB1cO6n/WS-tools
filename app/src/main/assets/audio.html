@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title></title>
+  <style>
+    .audio-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    canvas {
+        border: 1px solid rgb(100, 100, 100);
+    }
+
+    .cen {
+      display: flex;
+      justify-content: center;
+    }
+    
+    #cvs {
+      width: 100%;
+      hrigth: 50%;
+    }
+  </style>
+</head>
+<body id="container">
+  <h1>音频FFT</h1>
+  <button id="toggleTo1"></button><br>
+  <button id="toggleTo3"></button><br>
+  <button id="toggleTo4"></button><br>
+  <button id="toggleTo5"></button><br>
+  <canvas id="cvs"></canvas>
+  <div class="audio-container">
+      <audio controls></audio>
+  </div>
+  <div class="cen">
+    <input type="file" id="sele"/>
+  </div>
+  <script src="audio.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

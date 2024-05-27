@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>
+      Characters
+    </title>
+    <style type="text/css">
+      @font-face {
+        font-family:"NotoColorEmoji-minus";
+        src:url(fonts/NotoColorEmoji-minus.ttf);
+      }
+      @font-face {
+      	font-family:"Times";
+      	src:url(fonts/TH-Times.ttf);
+      }
+      @font-face {
+      	font-family:"Hancom";
+      	src:url(fonts/Hancom.ttf);
+      }
+      @font-face {
+      	font-family:"TH-P0";
+      	src:url(fonts/TH-Disp-P0.ttf);
+      }
+      @font-face {
+      	font-family:"TH-P2";
+      	src:url(fonts/TH-Disp-P2.ttf);
+      }
+      @font-face {
+      	font-family:"TH-P3";
+      	src:url(fonts/TH-Disp-P3.ttf);
+      }
+      @font-face {
+        font-family:"MU-LT";
+        src:url(fonts/MonuLast-8.16-1.ttf);
+      }
+      body {
+      	font-size:16px;
+      	padding:0;
+      	margin:4px;
+      	letter-spacing:0px;
+      }
+      #text {
+      	resize:vertical;
+      	width:100%;
+      	height:auto;
+      	overflow:auto;
+      	word-wrap:break-word;
+      	white-space:pre-wrap;
+      }
+    </style>
+    <script>
+      const updateHight = (textarea) => {
+        textarea.style.height = "auto";
+        textarea.style.height = `${textarea.scrollHeight}px`;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>字符显示器</h1>
+    <button id="toggleTo1"></button><br>
+    <button id="toggleTo2"></button><br>
+    <button id="toggleTo3"></button><br>
+    <button id="toggleTo5"></button><br>
+    <script src="index.js"></script>
+    <p align="left">
+      欢迎使用字符显示器！描述在这一页的末尾。
+      <br>
+    </p>
+    <p align="center">
+      <font style="font-size: 20px">
+        请在以下文本区域中输入字符。
+        <br>
+      </font>
+      <textarea oninput="updateHight(this)" rows="5" id="text" style="font-family:NotoColorEmoji-minus,Times,Hancom,TH-P0,TH-P2,TH-P3,MU-LT;font-size:20px;width:100%;"></textarea>
+    </p>
+    <p align="left">
+      这是一个Android软件，可以显示所有Unicode字符。
+      <br><br>
+      使用方法：
+      <br>
+      请粘贴或输入字符到文本区域。
+      <br><br>
+      注意事项：
+      <br>
+      一个未编码字符将显示为unencoded、方框、滑稽、幼苗或兔子
+      <br>
+      从4号平面到15号平面的字符都未编码，所以此软件无法显示这些字符。
+      <br>
+    </p>
+    <p align="right">
+      版本: 4.0.0-MG
+      <br>
+      编译日期: 2022/08/23
+      <br>
+      语言: 筒体中文
+      <br>
+      作者: CheonHyeong Sim
+      <br>
+      QQ: 2417647441
+      <br>
+      QQ群: 436064726
+      <br>
+    </p>
+  </body>
+</html>
