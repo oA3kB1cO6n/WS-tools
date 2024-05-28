@@ -3,6 +3,7 @@ const toggle2Button = document.getElementById('toggleTo2');
 const toggle3Button = document.getElementById('toggleTo3');
 const toggle4Button = document.getElementById('toggleTo4');
 const toggle5Button = document.getElementById('toggleTo5');
+const toggle6Button = document.getElementById('toggleTo6');
 if (toggleButton) {
   toggleButton.textContent = "切换至手速测试器页面";
   toggleButton.onclick = () => {
@@ -31,5 +32,11 @@ if (toggle5Button) {
   toggle5Button.textContent = "切换至随机字符生成器页面";
   toggle5Button.onclick = () => {
     window.location.href = 'randStr.html';
+  }
+}
+if (toggle6Button) {
+  toggle6Button.textContent = "切换至SI词头列表页面";
+  toggle6Button.onclick = () => {
+    window.location.href = 'SI.html';
   }
 }

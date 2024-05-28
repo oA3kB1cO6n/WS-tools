@@ -2,7 +2,15 @@ const audioEle = document.querySelector("audio");
 const seleEle = document.querySelector("#sele");
 const cvs = document.querySelector("#cvs");
 const ctx = cvs.getContext("2d");
-const spaceWidth = .5;
+const spaceWidth = 1;
+
+const cvsW = window.innerWidth - 16,
+  cvsH = (window.innerHeight - 16) / 2;
+
+cvs.width = cvsW * devicePixelRatio;
+cvs.height = cvsH * devicePixelRatio;
+cvs.style.width = cvsW + 'px';
+cvs.style.height = cvsH + 'px';
 
 seleEle.addEventListener("change", (event) => {
   const selectedFile = event.target.files[0];
@@ -66,8 +74,8 @@ function draw() {
     const x = i * barWidth + width/2;
     const x2 = width/2 - (i+1)*barWidth;
     let y = height - barHeight;
-    ctx.fillRect(x, y, barWidth - spaceWidth, barHeight);
-    ctx.fillRect(x2, y, barWidth - spaceWidth, barHeight);
+    ctx.fillRect(x + spaceWidth/2, y, barWidth - spaceWidth, barHeight);
+    ctx.fillRect(x2 + spaceWidth/2, y, barWidth - spaceWidth, barHeight);
   }
 }
 draw();
