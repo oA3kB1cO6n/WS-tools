@@ -124,7 +124,7 @@ function generateRandomCharacters() {
   if (options.includeCustomInterval) {
   	[...con.children].forEach((chi) => {
   	  const [inpu, inpu2] = chi.getElementsByTagName('input');
-      if (inpu.value && inpu2.value) characters.push(...rangeArr(parseInt(inpu.value, 16), parseInt(inpu2.value, 16)));
+      if (inpu.value && inpu2.value) characters = characters.concat(rangeArr(parseInt(inpu.value, 16), parseInt(inpu2.value, 16)));
   	})
   }
   var result = "";
